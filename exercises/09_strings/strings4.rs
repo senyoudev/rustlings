@@ -7,7 +7,6 @@
 //
 // No hints this time!
 
-// I AM NOT DONE
 
 fn string_slice(arg: &str) {
     println!("{}", arg);
@@ -17,14 +16,14 @@ fn string(arg: String) {
 }
 
 fn main() {
-    ???("blue");
-    ???("red".to_string());
-    ???(String::from("hi"));
-    ???("rust is fun!".to_owned());
-    ???("nice weather".into());
-    ???(format!("Interpolation {}", "Station"));
-    ???(&String::from("abc")[0..1]);
-    ???("  hello there ".trim());
-    ???("Happy Monday!".to_string().replace("Mon", "Tues"));
-    ???("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string_slice("blue"); // This is a string literal so it is a &str
+    string("red".to_string()); // This is a string because we change it to a String using to_string()
+    string(String::from("hi")); // This is a string because we change it to a String using from()
+    string("rust is fun!".to_owned()); // This is a string because we change it to a String using to_owned(), it is like we clone the string
+    string("nice weather".into()); // This is a string because we change it to a String using into()
+    string(format!("Interpolation {}", "Station")); // This is a string because we change it to a String using format! macro
+    string_slice(&String::from("abc")[0..1]); // This is a string slice because we take a slice of the string
+    string_slice("  hello there ".trim()); // trim() returns a string slice
+    string("Happy Monday!".to_string().replace("Mon", "Tues"));
+    string("mY sHiFt KeY iS sTiCkY".to_lowercase());
 }
